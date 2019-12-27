@@ -1,0 +1,5 @@
+name: nGravity
+version: "0.1.1"
+author: Nouma
+api-version: "1.14"
+main: me.nouma.ngravity.Main
