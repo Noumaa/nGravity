@@ -20,6 +20,7 @@ public class ItemListener implements Listener {
 
     @EventHandler
     public void onDrop(PlayerDropItemEvent e) {
+        if (Main.INSTANCE.getConfig().getStringList("worlds_blacklist").contains(e.getPlayer().getLocation().getWorld().getName())) return;
         Item item = e.getItemDrop();
         Chicken chicken = (Chicken) e.getPlayer().getLocation().getWorld().spawnEntity(e.getItemDrop().getLocation(), EntityType.CHICKEN);
         chicken.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, Integer.MAX_VALUE, 0, false, false));
